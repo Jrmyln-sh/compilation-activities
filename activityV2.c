@@ -10,8 +10,13 @@ void varActivity5();
 void varActivity6();
 void varRept();
 void varClear();
+void type1();
+void type2();
+void type3();
+void chcAct6();
 
-int lastActivity = -1;
+int lastActivity = 0;
+char typeAct = '0';
 
 int main() {
   mainMenu();
@@ -63,7 +68,7 @@ void mainMenu() {
     
     case '6':
         varActivity6();
-        varRept();
+        chcAct6();
         break;
 
     case '0':
@@ -74,13 +79,11 @@ void mainMenu() {
     default:
         printf("\n\tInvalid Choices Please Try Again!!");
         mainMenu();
-        break;
     }
-
 }
 
 void varActivity1() {
-    lastActivity = 0;
+    lastActivity = 1;
     
 	  char fName[100];
     char mName[100];
@@ -108,7 +111,7 @@ void varActivity1() {
 }
 
 void varActivity2() {
-   lastActivity = 1;
+   lastActivity = 2;
 
    	char firstName[20];
 	  char middleName[20];
@@ -167,7 +170,7 @@ void varActivity2() {
 }
 
 void varActivity3() {
-    lastActivity = 2;
+    lastActivity = 3;
 
     int score = 0;
     char answer;
@@ -260,7 +263,7 @@ void varActivity3() {
 }
 
 void varActivity4() {
-   lastActivity = 3;
+   lastActivity = 4;
 
    	char ans;
     int score = 0;
@@ -374,7 +377,7 @@ void varActivity4() {
 }
 
 void varActivity5() {
-    lastActivity = 4;
+    lastActivity = 56666666666;
 
 	  char ans;
     int score = 0;
@@ -500,21 +503,15 @@ void varActivity5() {
 }
 
 void varActivity6() {
-   lastActivity = 5;
-   
-   char choice;
-   int a = 1101;
-   int b = 1100;
-   int j;
-   int k;
-   int i;
+  //  lastActivity = 6;
 
+   char choice;
    printf("\n\t==========================================\n");
-   printf("\n\tChoose The Type of Activity");
+   printf("\n\tChoose The Type of Activity\n");
    printf("\n\t1.) Type 1");
    printf("\n\t2.) TYpe 2");
    printf("\n\t3.) Type 3");
-   printf("\n\t0.) Exit this activity");
+   printf("\n\t0.) Exit this activity\n");
    printf("\n\t==========================================\n");
    printf("\n\tEnter your choice: \t");
    scanf(" %c",&choice);
@@ -523,36 +520,56 @@ void varActivity6() {
 
    switch (choice) {
     case '1':
-    for(i = 1101; i <= 1108; i++) {
-        printf("\n\tBSIT %d",i);
-    }
+    typeAct = '1';
+    type1();
     break;
 
     case '2':
+    typeAct = '2';
+    type2();
+    break;
+
+    case '3':
+    typeAct = '3';
+    type3();
+    break;
+    
+    case '0':
+    mainMenu();
+    break;
+    
+    default:
+    printf("\n\tInvalid Choices, Please Try Again!!");
+    varActivity6();
+    break;
+   }
+   chcAct6();
+}
+
+void type1() {
+    int i;
+    for(i = 1101; i <= 1108; i++) {
+        printf("\n\tBSIT %d",i);
+    }
+}
+
+void type2() {
+    int a = 1101;
+    int b = 1100;
     printf("\n\tOdd \t\t Even \n");
     for (a; a <= 1118; a+=2) {
          printf("\tBSIT %d \t BSIT %d\n",a,b+=2);
     }
-    break;
+}
 
-    case '3':
+void type3() {
+    int j, k;
     for (j = 0; j <= 10; j++) {
         for(k = 1; k <= 10; k++) {
             printf("%d x %d = %d\t",j,k,j*k);
         }
         printf("\n");
     }
-    break;
-
-    case '0':
-    mainMenu();
-    break;
-    
-   default:
-    printf("\n\tInvalid Choices, Please Try Again!!");
-    varActivity6();
-    break;
-   }
 }
 
 void varRept() {
@@ -561,7 +578,7 @@ void varRept() {
   printf("\n\t==========================================\n");
   printf("\n\t1.) Try again");
   printf("\n\t2.) Try other activity");
-  printf("\n\t3.) Exit");
+  printf("\n\t0.) Exit");
   printf("\n\n\t==========================================\n");
   printf("\n\tEnter your choice: \t");
   scanf(" %c",&chance);
@@ -571,35 +588,35 @@ void varRept() {
   switch (chance) {
   case '1':
     switch(lastActivity) {
-      case 0:
+      case 1:
       varActivity1();
       varRept();
       break;
 
-      case 1:
+      case 2:
       varActivity2();
       varRept();
       break;
 
-      case 2:
+      case 3:
       varActivity3();
       varRept();
       break;
 
-      case 3:
+      case 4:
       varActivity4();
       varRept();
       break;
 
-      case 4:
+      case 5:
       varActivity5();
       varRept();
       break;
 
-      case 5:
-      varActivity6();
-      varRept();
-      break;
+      // case 6:
+      // varActivity6();
+      // chcAct6();
+      // break;
     }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     break;
 
@@ -607,7 +624,7 @@ void varRept() {
     mainMenu();
     break;
 
-  case '3':
+  case '0':
     printf("\n\tThank you for using the program!!!");
     exit(0);
     break;
@@ -623,5 +640,55 @@ void varClear() {
   system("clear");
 }
 
+void chcAct6() {
+  
+  char chance;
+  printf("\n\t==========================================\n");
+  printf("\n\t1.) Try again");
+  printf("\n\t2.) Try other Type");
+  printf("\n\t3.) Try other Activity");
+  printf("\n\t0.) Exit");
+  printf("\n\n\t==========================================\n");
+  printf("\n\tEnter your choice: \t");
+  scanf(" %c",&chance);
 
+  varClear();
+
+  switch (chance) {
+    case '1':
+    switch (typeAct) {
+      case '1':
+      type1();
+      break;
+
+      case '2':
+      type2();
+      break;
+
+      case '3':
+      type3();
+      break;
+    }
+    chcAct6();
+    break;
+
+    case '2':
+    varActivity6();
+    break;
+
+    case '3':
+    mainMenu();
+    break;
+
+    case '0':
+    printf("\n\tThank you for using the program!!!");
+    exit(0);
+    break;
+  
+    default:
+    printf("\n\tInvalid Choices, Please Try Again!!");
+    chcAct6();
+    break;
+  }
+}
 
