@@ -1,2 +1,3 @@
-# compilation-activities
-activity-7 in our Computer Programming
+# Compilation of Activity
+
+A Simple Program of Compilation Activity of C
